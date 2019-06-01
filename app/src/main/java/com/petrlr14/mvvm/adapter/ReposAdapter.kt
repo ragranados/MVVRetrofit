@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.petrlr14.mvvm.R
-import com.petrlr14.mvvm.database.entities.GitHubRepo
+import com.petrlr14.mvvm.database.entities.GithubRepo
 import kotlinx.android.synthetic.main.repo_cardview.view.*
 
-class ReposAdapter(var repos:List<GitHubRepo>): RecyclerView.Adapter<ReposAdapter.ViewHolder>() {
+class ReposAdapter(var repos:List<GithubRepo>): RecyclerView.Adapter<ReposAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.repo_cardview, parent, false)
         return ViewHolder(view)
@@ -22,7 +22,7 @@ class ReposAdapter(var repos:List<GitHubRepo>): RecyclerView.Adapter<ReposAdapte
         holder.bind(repos[position])
     }
 
-    fun updateList(newRepos:List<GitHubRepo>){
+    fun updateList(newRepos:List<GithubRepo>){
         newRepos.forEach{
             println("QUe pex")
         }
@@ -32,7 +32,7 @@ class ReposAdapter(var repos:List<GitHubRepo>): RecyclerView.Adapter<ReposAdapte
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(repo: GitHubRepo) = with(itemView) {
+        fun bind(repo: GithubRepo) = with(itemView) {
             this.repo_name.text=repo.name
         }
 

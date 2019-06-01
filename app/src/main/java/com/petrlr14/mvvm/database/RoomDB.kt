@@ -5,9 +5,9 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.petrlr14.mvvm.database.daos.GitHubDAO
-import com.petrlr14.mvvm.database.entities.GitHubRepo
+import com.petrlr14.mvvm.database.entities.GithubRepo
 
-@Database(entities = [GitHubRepo::class], version = 1, exportSchema = false)
+@Database(entities = [GithubRepo::class], version = 1, exportSchema = false)
 public abstract class RoomDB : RoomDatabase() {
 
     abstract fun repoDao():GitHubDAO
